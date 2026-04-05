@@ -127,11 +127,8 @@ export default function Home() {
       {/* Header */}
       <header className="w-full p-6 flex flex-col items-center justify-center space-y-4 pt-16 z-10">
         <div className="flex items-center gap-3">
-          <div className="bg-primary/20 p-3 rounded-2xl">
-            <FaBolt className="text-4xl text-primary drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
-          </div>
-          <h1 className="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-            URL Downloader
+          <h1 className="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-purple-900 to-gray-800">
+            SPICE-TECH DOWNLOADER
           </h1>
         </div>
         <p className="text-lg text-muted-foreground font-medium">Download HD Videos Without Watermarks</p>
@@ -174,7 +171,7 @@ export default function Home() {
                 >
                   <Icon className="drop-shadow-[0_0_10px_currentColor]" />
                 </div>
-                <span className={`text-sm font-semibold transition-colors ${isSelected ? 'text-white' : 'text-muted-foreground group-hover:text-gray-300'}`}>
+                <span className={`text-sm font-semibold transition-colors ${isSelected ? 'text-gray-900' : 'text-muted-foreground group-hover:text-gray-700'}`}>
                   {p.name}
                 </span>
               </button>
@@ -193,11 +190,11 @@ export default function Home() {
                 placeholder={selectedPlatform ? `Paste ${platforms.find(p => p.id === selectedPlatform)?.name} URL here...` : "Select a platform and paste URL..."}
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                className="flex-1 h-14 text-lg bg-background/50 border-white/5 focus-visible:ring-primary/50 text-white placeholder:text-gray-500"
+                className="flex-1 h-14 text-lg bg-background/40 border-border/60 focus-visible:ring-primary/60 text-foreground placeholder:text-muted-foreground"
               />
               <Button 
                 size="lg" 
-                className="h-14 px-8 text-lg font-bold bg-gradient-to-r from-primary to-blue-600 hover:from-primary/80 hover:to-blue-600/80 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all hover:scale-105"
+                className="shiny-btn h-14 px-8 text-lg font-bold bg-gradient-to-r from-purple-700 to-purple-900 text-white shadow-[0_0_24px_rgba(120,40,200,0.55)] disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={handleDownload}
                 disabled={createDownload.isPending || !url || !selectedPlatform}
               >
@@ -275,7 +272,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="group"
           >
-            <Button variant="outline" className="bg-[#25D366]/10 text-[#25D366] border-[#25D366]/30 hover:bg-[#25D366]/20 hover:text-[#25D366] rounded-full px-6 h-12 transition-all group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(37,211,102,0.3)]">
+            <Button variant="outline" className="shiny-btn bg-[#25D366] text-white border-[#1aad52] rounded-full px-6 h-12 shadow-[0_4px_20px_rgba(37,211,102,0.4)]">
               <FaWhatsapp className="mr-2 text-xl" /> Contact His Excellency
             </Button>
           </a>
@@ -284,9 +281,9 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full py-8 border-t border-white/5 bg-background/80 backdrop-blur-md relative z-10">
+      <footer className="w-full py-8 border-t border-border/50 bg-background/80 backdrop-blur-md relative z-10">
         <div className="container mx-auto px-4 flex flex-col items-center justify-center space-y-4">
-          <div className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors cursor-pointer" onClick={() => setIsAdminModalOpen(true)}>
+          <div className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer" onClick={() => setIsAdminModalOpen(true)}>
             <FaCrown className="text-primary" />
             <span className="font-medium tracking-wide">Made by His Excellency</span>
           </div>
